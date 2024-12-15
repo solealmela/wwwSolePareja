@@ -50,7 +50,7 @@
                 </div>';
 
                 $cognoms ="Sense valor";
-                if (isset($_POST['cognoms'])&& strlen(trim($_POST['cognomsa']))> 0){
+                if (isset($_POST['cognoms'])&& strlen(trim($_POST['cognoms']))> 0){
                 $cognoms=trim(htmlspecialchars($_POST['cognoms']));
                 }
 
