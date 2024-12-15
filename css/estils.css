@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+#wrapper{
+    width:80%;
+    margin: 1% 10% 1% 10%;
+    background-color: rgb(230, 229, 229);
+}
+
+#cap{
+    width:80%;
+    margin: auto;
+    margin-bottom: 0;
+    border:solid 1px black;
+    padding:10px;
+    background-color:rgb(237, 175, 95);
+    border-radius: 40px 40px 0px 0px;
+    border: solid 2px black;
+    text-align:center;
+}
+
+#cap h1 {
+    margin:10px;
+}
+
+#cap h2{
+    margin: 0 30% 0 30%;
+    padding: 10px;
+    background-color: #bfff9a;
+    border-radius: 50px;
+    border:solid 2px #91c474;
+}
+
+#menu {
+    width:80%;
+    margin: auto;
+    margin-top: 0;
+    border: solid 2px black;
+    padding:10px;
+    background-color: #e7f3a1;
+    border-radius: 0px 0px 40px 40px;
+}
+
+#menu ul {
+    width: 100%;
+    align-items: center;
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+
+}
+
+#menu ul li{
+    width: 13%;
+    text-align: center;
+    margin: 10px;
+    padding: 15px;
+    background-color: aqua;
+    border:solid 2px rgb(0, 129, 129);
+}
+
+#principal{
+    width:80%;
+    margin:10px auto 10px auto;
+    border: solid 2px black;
+    padding:10px;
+    background-color:white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#principal img {
+    margin: 5px;
+    border: 2px solid #ff7070;
+    border-radius: 10px;
+}
+
+#principal ul li {
+    margin-bottom: 10px;
+}
+
+#peu{
+    width:80%;
+    margin:10px auto 10px auto;
+    border:solid 2px black;
+    padding:10px;
+    background-color: #e7f3a1;
+    border-radius: 0px 0px 40px 40px;
+    text-align:center;
+
+}
+
+#peu p{
+    width:50%;
+    margin:10px auto 10px auto;
+}
+
+#peu img {
+    width: 20%;
+}
+
+/* partials */
+
+#inici {
+    width:80%;
+    margin:10px auto 10px auto;
+    border: solid 2px black;
+    padding:10px;
+    background-color:white;
+    text-align: center;
+    border-radius: 40px 40px 0px 0px;
+}
+
+#inici h2 {
+    background-color: #ff8170;
+    border:solid 2px black;
+    padding: 15px;
+    margin: 0 25% 0 25%;
+}
+
+#benvinguda {
+    background-color: #e7f3a1;
+    border: solid 2px black;
+    margin:10px auto 10px auto;
+}
+
+#benvinguda h3 {
+    background-color: rgb(195, 195, 255);
+    margin: 1% 30% 1% 30%;    
+    padding: 15px;
+    border: solid 2px black;
+
+}
+
+#benvinguda img {
+    width: 70%;
+}
+
+#frutas {
+    background-color: white;
+    border-radius: 40px;
+    margin: 15px;
+    padding: 15px;
+}
+
+
+#botiga {
+    width:80%;
+    margin:10px auto 10px auto;
+    border: solid 2px black;
+    padding:10px;
+    background-color:white;
+    text-align: center;
+    border-radius: 40px 40px 0px 0px;
+}
+
+#botiga h2 {
+    background-color: #ff8170;
+    border:solid 2px black;
+    padding: 15px;
+    margin: 0 25% 0 25%;
+}
+
+#construccio {
+    background-color: #e7f3a1;
+    border: solid 2px black;
+    margin:10px auto 10px auto;
+}
+
+#construccio h3 {
+    background-color: rgb(195, 195, 255);
+    margin: 1% 30% 1% 30%;    
+    padding: 15px;
+    border: solid 2px black;
+
+}
+
+#img_construccio {
+    background-color: white;
+    border-radius: 40px;
+    margin: 15px;
+    padding: 15px;
+}
+
+#img_construccio img {
+    width: 40%;
+}
+
+
+#registre, #contacte {
+    width:80%;
+    margin:10px auto 10px auto;
+    border: solid 2px black;
+    padding:10px;
+    background-color:white;
+    text-align: center;
+    border-radius: 40px 40px 0px 0px;
+}
+
+#registre h2, #contacte h2 {
+    background-color: #ff8170;
+    border:solid 2px black;
+    padding: 15px;
+    margin: 0 25% 0 25%;
+}
+
+#formulario {
+    background-color: #e7f3a1;
+    border: solid 2px black;
+    margin:10px auto 10px auto;
+    padding: 20px;
+}
+
+#formulario .seccion_formulario {
+    border: solid 2px green;
+    padding: 10px;
+    margin: 1% 15% 1% 15%;
+    background-color: #f5ffbf;    
+}
+
+#formulario form .input {
+    padding: 5px;
+}
+
+#formulario button {
+    padding: 10px;
+}
+
+
+
