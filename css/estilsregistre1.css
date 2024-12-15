@@ -8,7 +8,7 @@
 #wrapper{
     width:80%;
     margin: 1% 10% 1% 10%;
-    background-color: rgb(230, 229, 229);
+    background-color: rgb(186, 68, 255);
 }
 
 #cap{
@@ -17,7 +17,7 @@
     margin-bottom: 0;
     border:solid 1px black;
     padding:10px;
-    background-color:rgb(237, 175, 95);
+    background-color:rgb(243, 192, 255);
     border-radius: 40px 40px 0px 0px;
     border: solid 2px black;
     text-align:center;
@@ -30,9 +30,8 @@
 #cap h2{
     margin: 0 30% 0 30%;
     padding: 10px;
-    background-color: #bfff9a;
+    background-color: #cb94de;
     border-radius: 50px;
-    border:solid 2px #91c474;
 }
 
 #menu {
@@ -41,7 +40,7 @@
     margin-top: 0;
     border: solid 2px black;
     padding:10px;
-    background-color: #e7f3a1;
+    background-color:rgb(243, 192, 255);
     border-radius: 0px 0px 40px 40px;
 }
 
@@ -60,8 +59,8 @@
     text-align: center;
     margin: 10px;
     padding: 15px;
-    background-color: aqua;
-    border:solid 2px rgb(0, 129, 129);
+    background-color: rgb(193, 128, 223);
+    border:solid 2px rgb(92, 0, 129);
 }
 
 #principal{
@@ -69,19 +68,9 @@
     margin:10px auto 10px auto;
     border: solid 2px black;
     padding:10px;
-    background-color:white;
+    background-color:rgb(243, 192, 255);
     text-align: center;
     border-radius: 10px;
-}
-
-#principal img {
-    margin: 5px;
-    border: 2px solid #ff7070;
-    border-radius: 10px;
-}
-
-#principal ul li {
-    margin-bottom: 10px;
 }
 
 #peu{
@@ -89,7 +78,7 @@
     margin:10px auto 10px auto;
     border:solid 2px black;
     padding:10px;
-    background-color: #e7f3a1;
+    background-color:rgb(243, 192, 255);
     border-radius: 0px 0px 40px 40px;
     text-align:center;
 
@@ -112,20 +101,20 @@
     margin:10px auto 10px auto;
     border: solid 2px black;
     padding:10px;
-    background-color:white;
+    background-color:rgb(243, 192, 255);
     text-align: center;
     border-radius: 40px 40px 0px 0px;
 }
 
 #registre h2, #contacte h2 {
-    background-color: #ff8170;
+    background-color: #ac23d2;
     border:solid 2px black;
     padding: 15px;
     margin: 0 25% 0 25%;
 }
 
 #formulario {
-    background-color: #e7f3a1;
+    background-color: #d667ff;
     border: solid 2px black;
     margin:10px auto 10px auto;
     padding: 30px;
@@ -174,14 +163,5 @@
 
 .seccion_formulario img {
     width: 50%;
-}
-
-.seccion_formulario .puntuacio {
-    width: 20%;
-}
-
-.seccion_formulario #sensevalor_puntuacio {
-    color: white;
-    background-color: red;
 }
 

@@ -18,6 +18,11 @@
             <label for="missatge">Missatge:</label> 
             <textarea class="input" id="missatge" name="missatge" cols="40" rows="4"></textarea>
         </div>
+
+        <div class="seccion_formulario">
+            <label for="puntuacio">Puntua la pàgina (1-5):</label>
+            <input type="number" id="puntuacio" name="puntuacio" min="1" max="5" step="1">
+        </div>
             
         <button type = "submit">Enviar</button>
 

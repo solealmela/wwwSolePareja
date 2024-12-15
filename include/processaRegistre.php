@@ -1,11 +1,26 @@
+<?php 
+
+    $estils_registre = "";
+    $estil_css = "../css/processa.css";
+
+    if (isset($_POST['estils_registre'])) {
+        if ($_POST['estils_registre'] == 'morat') {
+            $estil_css = "../css/estilsregistre1.css";
+        } elseif ($_POST['estils_registre'] == 'groc') {
+            $estil_css = "../css/estilsregistre2.css";
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <html>
 	<head>
         <meta charset="utf-8">
 		<title>Proyecto Entornos</title>
-		<link rel="stylesheet" href="../css/processa.css">
-	</head>
+        <link rel="stylesheet" href="<?php  echo $estil_css; ?>">
+        </head>
 	<body id = "wrapper">
     <?php
 
@@ -73,14 +88,18 @@
 
 
                 $poblacio ="Sense valor";
+                
                 if (isset($_POST['poblacio'])&& strlen(trim($_POST['poblacio']))> 0){
                 $poblacio=trim(htmlspecialchars($_POST['poblacio']));
+                $foto = $poblacio;
+                } else {
+                    $foto="vacio";                   
                 }
 
                 echo '<div class="seccion_formulario"
                     <label><span class="rojo">Poblacio:</span>  <span class="gris">'.$poblacio.'</span></label>
-                </div>';
-
+                    <img src="../img/'.$foto.'.jpg" alt="poblacio">
+                </div>'; 
                 
 
                 $telefon ="Sense valor";
@@ -99,6 +118,15 @@
 
                 echo '<div class="seccion_formulario"
                 <label><span class="rojo">Hora repartiment:</span>  <span class="gris">'.$horari.'</span></label>
+                </div>';
+
+                $estils_registre ="Sense valor";
+                if (isset($_POST['estils_registre'])&& strlen(trim($_POST['estils_registre']))> 0){
+                $estils_registre=trim(htmlspecialchars($_POST['estils_registre']));
+                }
+
+                echo '<div class="seccion_formulario"
+                <label><span class="rojo">Estils registres:</span>  <span class="gris">'.$estils_registre.'</span></label>
                 </div>';
 
     
