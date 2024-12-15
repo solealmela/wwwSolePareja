@@ -26,7 +26,7 @@
 
             <div class="seccion_formulario">
                 <label for="contrasenya">Contrasenya:</label>
-                <input class="input" type="text" name="contrasenya"/>
+                <input class="input" type="password" name="contrasenya"/>
             </div>
 
             <div class="seccion_formulario">
