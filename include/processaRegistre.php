@@ -78,7 +78,7 @@
 					</div>';
 					
 					$contrasenya ="Sense valor";
-					if (isset($_POST['contrasenya']) && strlen(trim($_POST['contrasenyna']))> 0){
+					if (isset($_POST['contrasenya']) && strlen(trim($_POST['contrasenya']))> 0){
 						$contrasenya=trim(htmlspecialchars($_POST['contrasenya']));
 					}
 
@@ -112,9 +112,7 @@
 						}
 						echo '</table>';
 						echo '</div>';
-					} else {
-						echo '<p>No hi ha informació per a aquesta població.</p>';
-					}
+					} 
 					
 
 					$telefon ="Sense valor";
