@@ -57,6 +57,16 @@
                     <label><input type="radio" name="estils_registre" value="groc"> Groc</label>
             </div>
 
+            <div class="seccion_formulario">
+                <label for="fruites_preferides">Fruites preferides: </label>
+                <label><input type="checkbox" name="fruites_preferides[]" value="poma"> Poma</label>
+                <label><input type="checkbox" name="fruites_preferides[]" value="taronja"> Taronja</label>
+                <label><input type="checkbox" name="fruites_preferides[]" value="melo"> Melo</label>
+                <label><input type="checkbox" name="fruites_preferides[]" value="banana"> Banana</label>
+                <label><input type="checkbox" name="fruites_preferides[]" value="caqui"> Caqui</label>
+            </div>
+
+
           
             <button type = "submit">Enviar</button>
             
