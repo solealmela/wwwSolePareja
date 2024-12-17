@@ -10,7 +10,7 @@
 
     $dataActual = $diesSetmana[$diaSetmana] . ", " . $diaMes . " de " . $mesos[$mesActual] . " de " . $anyActual;
 
-    echo "<div style='text-align:right; margin: 1% 0% 1% 75%; padding: 10px; font-size:20px; font-weight:bold; background-color: white; border: 2px solid #e7f3a1; border-radius:30px; '>
+    echo "<div style='text-align:center; margin: 1% 0% 1% 70%; padding: 10px; font-size:20px; font-weight:bold; background-color: white; border: 2px solid #e7f3a1; border-radius:30px; '>
             $dataActual
         </div>";
 ?>

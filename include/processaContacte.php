@@ -75,6 +75,7 @@
 
                 $img = "";
                 $puntuacio ="Sense valor";
+                $id = "";
 
                 if (isset($_POST['puntuacio'])&& strlen(trim($_POST['puntuacio']))> 0){
 

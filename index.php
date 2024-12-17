@@ -9,6 +9,8 @@
 	<body id = "wrapper">
 		<?php
 
+		$base = "./";
+
         include_once ("./include/cap.partial.php");
         
         include_once ("./include/menu.partial.php");
