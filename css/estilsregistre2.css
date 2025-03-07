@@ -19,7 +19,6 @@
     padding:10px;
     background-color:rgb(255, 245, 192);
     border-radius: 40px 40px 0px 0px;
-    border: solid 2px black;
     text-align:center;
 }
 
@@ -32,6 +31,24 @@
     padding: 10px;
     background-color: #dcde94;
     border-radius: 50px;
+}
+
+#contenedor_registro {
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+}
+
+.fecha_estilos {
+    text-align: center;
+    color: #5a5d00;
+    margin: 1%;
+    padding: 10px; 
+    font-size:17px; 
+    font-weight:bold; 
+    background-color: white;    
+    border: 4px solid #5a5d00; 
+    border-radius:30px; 
 }
 
 #menu {
@@ -95,8 +112,48 @@
 
 /* partials */
 
+#inici {
+    width: 80%;
+    margin: 10px auto 10px auto;
+    border: solid 2px black;
+    padding: 10px;
+    background-color:rgb(255, 245, 192);
+    text-align: center;
+    border-radius: 40px 40px 0px 0px;
+}
 
-#registre, #contacte {
+#inici h2 {
+    background-color:rgb(249, 234, 164);
+    border: solid 2px black;
+    padding: 15px;
+    margin: 0 25% 0 25%;
+}
+
+#benvinguda {
+    background-color:rgb(221, 196, 84);
+    border: solid 2px black;
+    margin: 10px auto 10px auto;
+}
+
+#benvinguda h3 {
+    background-color:rgb(249, 234, 164);
+    margin: 1% 30% 1% 30%;
+    padding: 15px;
+    border: solid 2px black;
+}
+
+#benvinguda img {
+    width: 70%;
+}
+
+#frutas {
+    background-color: white;
+    border-radius: 40px;
+    margin: 15px;
+    padding: 15px;
+}
+
+#botiga {
     width:80%;
     margin:10px auto 10px auto;
     border: solid 2px black;
@@ -106,17 +163,81 @@
     border-radius: 40px 40px 0px 0px;
 }
 
-#registre h2, #contacte h2 {
-    background-color: #d2be23;
+#botiga h2 {
+    background-color:rgb(221, 196, 84);
     border:solid 2px black;
     padding: 15px;
     margin: 0 25% 0 25%;
 }
 
-#formulario {
-    background-color: #fff067;
+#construccio {
+    background-color:rgb(242, 221, 126);
     border: solid 2px black;
     margin:10px auto 10px auto;
+}
+
+#construccio h3 {
+    background-color:rgb(221, 196, 84);
+    margin: 1% 30% 1% 30%;    
+    padding: 15px;
+    border: solid 2px black;
+
+}
+
+#img_construccio {
+    background-color: white;
+    border-radius: 40px;
+    margin: 15px;
+    padding: 15px;
+}
+
+#img_construccio img {
+    width: 40%;
+}
+
+#correcte {
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(224, 255, 224);
+    padding: 10px;
+    border: 2px solid green;
+    margin: 10px auto 0 auto;
+    width: 50%;
+}
+
+#error {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(255, 230, 230);
+    padding: 10px;
+    border: 2px solid red;
+    margin: 10px auto 0 auto;
+    width: 50%;
+}
+
+#registre, #contacte {
+    width: 80%;
+    margin: 10px auto 10px auto;
+    border: solid 2px black;
+    padding: 10px;
+    background-color:rgb(255, 245, 192);
+    text-align: center;
+    border-radius: 40px 40px 0px 0px;
+}
+
+#registre h2, #contacte h2 {
+    background-color:rgb(249, 234, 164);
+    border: solid 2px black;
+    padding: 15px;
+    margin: 0 25% 0 25%;
+}
+
+#formulario {
+    background-color:rgb(249, 234, 164);
+    border: solid 2px black;
+    margin: 10px auto 10px auto;
     padding: 30px;
 }
 
@@ -127,17 +248,15 @@
 }
 
 #formulario .seccion_formulario {
-    border: solid 2px black;
+    border: solid 2px rgb(114, 25, 166);
     padding: 10px;
     margin: 1% 15% 1% 15%;
     background-color: #ffffff;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
-
-
 
 #formulario .input {
     padding: 5px;
@@ -186,9 +305,4 @@ table th, table td {
     background-color: rgb(235, 235, 235);
     font-weight: bold;
     font-size: 25px;
-}
-
-.seccion_formulario {
-    margin: 20px auto;
-    text-align: center;
 }

@@ -35,6 +35,24 @@
     border:solid 2px #91c474;
 }
 
+#contenedor_registro {
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+}
+
+.fecha_estilos {
+    text-align: center;
+    color: #3d891b;
+    margin: 1%;
+    padding: 10px; 
+    font-size:17px; 
+    font-weight:bold; 
+    background-color: white;    
+    border: 4px solid #3d891b; 
+    border-radius:30px; 
+}
+
 #menu {
     width:80%;
     margin: auto;
@@ -190,7 +208,6 @@
 #img_construccio img {
     width: 40%;
 }
-
 
 #registre, #contacte {
     width:80%;

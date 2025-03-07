@@ -1,16 +1,26 @@
-<?php 
+<?php
+	$pagina_actual = $_SERVER['REQUEST_URI']; 
 
-    $estils_registre = "";
-    $estil_css = "../css/processa.css";
+	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['estils_registre'])) {
+		$color = $_POST['estils_registre'];
 
-    if (isset($_POST['estils_registre'])) {
-        if ($_POST['estils_registre'] == 'morat') {
-            $estil_css = "../css/estilsregistre1.css";
-        } elseif ($_POST['estils_registre'] == 'groc') {
-            $estil_css = "../css/estilsregistre2.css";
-        }
-    }
+		if ($color == "morat") {
+			$estil_css = "../css/estilsregistre1.css";
+		} elseif ($color == "groc") {
+			$estil_css = "../css/estilsregistre2.css";
+		}
 
+		$url_parts = parse_url($pagina_actual);
+		parse_str($url_parts['query'], $query_params);
+
+		$query_params['color'] = $color;
+
+		$new_query_string = http_build_query($query_params);
+		$new_url = $url_parts['path'] . '?' . $new_query_string;
+
+		header("Location: $new_url");
+		exit();
+	}
 ?>
 
 <!DOCTYPE html>
@@ -19,26 +29,47 @@
 	<head>
         <meta charset="utf-8">
 		<title>Proyecto Entornos</title>
-        <link rel="stylesheet" href="<?php  echo $estil_css; ?>">
+		<?php
+			$estil_css = "../css/processa.css";
+
+			if (isset($_GET['color'])) {
+				if ($_GET['color'] == "morat") {
+					$estil_css = "../css/estilsregistre1.css";
+				} elseif ($_GET['color'] == "groc") {
+					$estil_css = "../css/estilsregistre2.css";
+				}
+			}
+		?>
+		<link rel="stylesheet" href="<?php echo $estil_css; ?>">
+
         </head>
 	<body id = "wrapper">
     <?php
 
         include_once ("./cap.partial.php");
-
     
         $base = "../";
         include_once("menu.partial.php");
-    
+
                 
         echo '<div id="registre">';
 
             echo '<h2>Dades Missatge Registre</h2>';
 
+			include_once("funcions.php");
+
+			$fitxer_usuaris = "../usuaris/passwd.txt";
+
+			$nom = $_POST['nom'] ?? '';
+			$email = $_POST['correu_electronic'] ?? '';
+			$contrasenya = $_POST['contrasenya'] ?? '';
+
+			$registreExit = guardarUsuari($nom, $email, $contrasenya, $fitxer_usuaris);
+			missatge($registreExit, $email);
+
             echo '<div id="formulario">';
 
                 echo '<div id="interior_formulario">';
-
                 
 					$nom ="Sense valor";
 					if (isset($_POST['nom'] ) && strlen(trim($_POST['nom']))> 0){

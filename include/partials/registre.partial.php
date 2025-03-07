@@ -6,7 +6,7 @@
         <form method="post" action="include/processaRegistre.php">
             <div class="seccion_formulario">
                 <label for="nom">Nom:</label>
-                <input class="input" type="text" name="nom" required/>
+                <input class="input" type="text" name="nom" required pattern="^[^:]+$" title="No pot contenir dos punts ( : )" />
             </div>
 
             <div class="seccion_formulario">
@@ -21,16 +21,16 @@
 
             <div class="seccion_formulario">
                 <label for="correu_electronic">Correu Electrónic:</label>
-                <input class="input" type="text" name="correu_electronic" required/>
+                <input class="input" type="email" name="correu_electronic" required pattern="^[^:]+$" title="No pot contenir dos punts ( : )"/>
             </div>
 
             <div class="seccion_formulario">
                 <label for="contrasenya">Contrasenya:</label>
-                <input class="input" type="password" name="contrasenya"/>
+                <input class="input" type="password" name="contrasenya" required pattern="^(?!.*:).{6,}$" title="Ha de tindre almenys 6 caràcters i no pot contenir dos punts ( : )"/>
             </div>
 
             <div class="seccion_formulario">
-                <label for="poblacio">Poblacio:</label>
+                <label for="poblacio">Població:</label>
                 <select id="poblacio" name="poblacio" class="input">
                     <option value="" selected disabled>Selecciona una opción</option>
                     <option value="xativa">Xàtiva</option>
@@ -39,9 +39,8 @@
                 </select>
             </div>
 
-
             <div class="seccion_formulario">
-                <label for="telefon">Teléfon:</label>
+                <label for="telefon">Telèfon:</label>
                 <input class="input" type="tel" name="telefon"/>
             </div>
 
@@ -49,12 +48,6 @@
                 <label for="horari">Hora de repartiment: </label>
                     <label><input type="radio" name="horari" value="Matí"> Matí</label>
                     <label><input type="radio" name="horari" value="Vesprada"> Vesprada</label>
-            </div>
-
-            <div class="seccion_formulario">
-                <label for="estils_registre">Estils registre: </label>
-                    <label><input type="radio" name="estils_registre" value="morat"> Morat</label>
-                    <label><input type="radio" name="estils_registre" value="groc"> Groc</label>
             </div>
 
             <div class="seccion_formulario">
@@ -66,13 +59,8 @@
                 <label><input type="checkbox" name="fruites_preferides[]" value="caqui"> Caqui</label>
             </div>
 
-
-          
-            <button type = "submit">Enviar</button>
-            
+            <button type="submit">Enviar</button>
             <button type="reset">Neteja</button>
-
         </form>
-
     </div>
 </main>
