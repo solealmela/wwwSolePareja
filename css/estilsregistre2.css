@@ -51,6 +51,61 @@
     border-radius:30px; 
 }
 
+#form_login {
+    width:80%;
+    margin: auto;
+    margin-top: 0;
+    border: solid 2px black;
+    padding:10px;
+    background-color: #82e1a6;
+    display: flex;
+}
+
+#form_login form {
+    position: relative; 
+    border: solid 4px #176433;
+    width: 60%;
+    margin: 10px auto;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#seccion_login {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px; 
+
+}
+
+#palabra_login {
+    position: absolute;
+    top: -18px; 
+    left: 20px; 
+    background-color: white; 
+    padding: 3px 10px;
+    border: solid 4px #176433;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#error_login {
+    border: solid 4px red;
+    padding: 10px;
+    color: red;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    margin: auto;
+}
+
+#missatgeBenvinguda {
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+    text-decoration: underline;
+}
+
 #menu {
     width:80%;
     margin: auto;
@@ -153,7 +208,7 @@
     padding: 15px;
 }
 
-#botiga {
+#botiga, #administracio {
     width:80%;
     margin:10px auto 10px auto;
     border: solid 2px black;
@@ -163,14 +218,14 @@
     border-radius: 40px 40px 0px 0px;
 }
 
-#botiga h2 {
+#botiga h2, #administracio h2 {
     background-color:rgb(221, 196, 84);
     border:solid 2px black;
     padding: 15px;
     margin: 0 25% 0 25%;
 }
 
-#construccio {
+#construccio, #admin {
     background-color:rgb(242, 221, 126);
     border: solid 2px black;
     margin:10px auto 10px auto;
@@ -184,14 +239,14 @@
 
 }
 
-#img_construccio {
+#img_construccio, #img_admin {
     background-color: white;
     border-radius: 40px;
     margin: 15px;
     padding: 15px;
 }
 
-#img_construccio img {
+#img_construccio img, #img_admin img {
     width: 40%;
 }
 

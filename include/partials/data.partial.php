@@ -6,9 +6,15 @@
     $diaSetmana = date('w'); 
     $diaMes = date('j'); 
     $mesActual = date('n') - 1;
-    $anyActual = date('Y'); 
+    $anyActual = date('Y');
 
-    $dataActual = $diesSetmana[$diaSetmana] . ", " . $diaMes . " de " . $mesos[$mesActual] . " de " . $anyActual;
+    if (isset($_SESSION["usuari"])) {
+        $dataActual = "<span id='missatgeBenvinguda'>Hola " . ucfirst($_SESSION["usuari"]) . "!</span> :: " . $diesSetmana[$diaSetmana] . ", " . $diaMes . " de " . $mesos[$mesActual] . " de " . $anyActual . " :: <a href='include/processaLogout.php'> Logout</a>";
+    } else {
+        $dataActual = $diesSetmana[$diaSetmana] . ", " . $diaMes . " de " . $mesos[$mesActual] . " de " . $anyActual;
+    }
+
+    
 
     echo "<div class='fecha_estilos'>
             $dataActual

@@ -1,25 +1,19 @@
 <?php
-	$pagina_actual = $_SERVER['REQUEST_URI']; 
+    session_start();
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['estils_registre'])) {
-		$color = $_POST['estils_registre'];
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION["estils"] = "";
 
-		if ($color == "morat") {
-			$estil_css = "../css/estilsregistre1.css";
-		} elseif ($color == "groc") {
-			$estil_css = "../css/estilsregistre2.css";
-		}
+        if (isset($_POST['estils_registre'])){
+            $color = $_POST['estils_registre'];
 
-		$url_parts = parse_url($pagina_actual);
-		parse_str($url_parts['query'], $query_params);
+            if ($color == "morat") {
+                $_SESSION["estils"] = "css/estilsregistre1.css";
+            } elseif ($color == "groc") {
+                $_SESSION["estils"] = "css/estilsregistre2.css";
+            }
+        }
 
-		$query_params['color'] = $color;
-
-		$new_query_string = http_build_query($query_params);
-		$new_url = $url_parts['path'] . '?' . $new_query_string;
-
-		header("Location: $new_url");
-		exit();
 	}
 ?>
 
@@ -30,27 +24,25 @@
         <meta charset="utf-8">
 		<title>Proyecto Entornos</title>
 		<?php
-			$estil_css = "../css/processa.css";
+			$base = "../";
+            $estil_css = "css/processa.css";
 
-			if (isset($_GET['color'])) {
-				if ($_GET['color'] == "morat") {
-					$estil_css = "../css/estilsregistre1.css";
-				} elseif ($_GET['color'] == "groc") {
-					$estil_css = "../css/estilsregistre2.css";
-				}
-			}
+
+            if (!empty($_SESSION["estils"])){
+                $estil_css = $_SESSION["estils"];
+            }
+	
+			$estil_css = $base.$estil_css;
 		?>
 		<link rel="stylesheet" href="<?php echo $estil_css; ?>">
 
-        </head>
+    </head>
 	<body id = "wrapper">
     <?php
 
         include_once ("./cap.partial.php");
     
-        $base = "../";
-        include_once("menu.partial.php");
-
+        include_once("./menu.partial.php");
                 
         echo '<div id="registre">';
 
@@ -164,35 +156,28 @@
 						<label><span class="rojo">Hora repartiment:</span>  <span class="gris">'.$horari.'</span></label>
 					</div>';
 
-					$estils_registre ="Sense valor";
-					if (isset($_POST['estils_registre'])&& strlen(trim($_POST['estils_registre']))> 0){
-						$estils_registre=trim(htmlspecialchars($_POST['estils_registre']));
+
+					$fruites_preferides = [];
+
+					if (isset($_POST['fruites_preferides']) && is_array($_POST['fruites_preferides'])) {
+						$fruites_preferides = $_POST['fruites_preferides'];
 					}
 
-					echo '<div class="seccion_formulario"
-					<label><span class="rojo">Estils registres:</span>  <span class="gris">'.$estils_registre.'</span></label>
-					</div>';
+					echo '<div class="seccion_formulario">
+							<label><span class="rojo">Fruites preferides:</span></label>';
 
-						$fruites_preferides = [];
-
-						if (isset($_POST['fruites_preferides']) && is_array($_POST['fruites_preferides'])) {
-							$fruites_preferides = $_POST['fruites_preferides'];
+						if (!empty($fruites_preferides)) {
+							foreach ($fruites_preferides as $fruita) {
+								echo '<img src="../img/' . $fruita . '.png"/>';
+							}
+						} else {
+							echo '<img src="../img/vacio.jpg"/>';
 						}
 
-						echo '<div class="seccion_formulario">
-								<label><span class="rojo">Fruites preferides:</span></label>';
+					echo '</div>';	
 
-							if (!empty($fruites_preferides)) {
-								foreach ($fruites_preferides as $fruita) {
-									echo '<img src="../img/' . $fruita . '.png"/>';
-								}
-							} else {
-								echo '<img src="../img/vacio.jpg"/>';
-							}
 
-						echo '</div>';				
-
-                echo '</div>';
+                	echo '</div>';
 
             echo '</div>';
         

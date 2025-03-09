@@ -1,25 +1,19 @@
 <?php
-	$pagina_actual = $_SERVER['REQUEST_URI']; 
+    session_start();
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['estils_registre'])) {
-		$color = $_POST['estils_registre'];
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION["estils"] = "";
 
-		if ($color == "morat") {
-			$estil_css = "../css/estilsregistre1.css";
-		} elseif ($color == "groc") {
-			$estil_css = "../css/estilsregistre2.css";
-		}
+        if (isset($_POST['estils_registre'])){
+            $color = $_POST['estils_registre'];
 
-		$url_parts = parse_url($pagina_actual);
-		parse_str($url_parts['query'], $query_params);
+            if ($color == "morat") {
+                $_SESSION["estils"] = "css/estilsregistre1.css";
+            } elseif ($color == "groc") {
+                $_SESSION["estils"] = "css/estilsregistre2.css";
+            }
+        }
 
-		$query_params['color'] = $color;
-
-		$new_query_string = http_build_query($query_params);
-		$new_url = $url_parts['path'] . '?' . $new_query_string;
-
-		header("Location: $new_url");
-		exit();
 	}
 ?>
 
@@ -30,15 +24,15 @@
         <meta charset="utf-8">
 		<title>Proyecto Entornos</title>
         <?php
-			$estil_css = "../css/processa.css";
+			$base = "../";
+            $estil_css = "css/processa.css";
 
-			if (isset($_GET['color'])) {
-				if ($_GET['color'] == "morat") {
-					$estil_css = "../css/estilsregistre1.css";
-				} elseif ($_GET['color'] == "groc") {
-					$estil_css = "../css/estilsregistre2.css";
-				}
-			}
+
+            if (!empty($_SESSION["estils"])){
+                $estil_css = $_SESSION["estils"];
+            }
+	
+			$estil_css = $base.$estil_css;
 		?>
 		<link rel="stylesheet" href="<?php echo $estil_css; ?>">	
     </head>
@@ -47,8 +41,6 @@
 
         include_once ("./cap.partial.php");
 
-    
-        $base = "../";
         include_once("menu.partial.php");
     
                 

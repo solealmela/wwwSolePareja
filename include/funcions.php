@@ -6,7 +6,7 @@ function guardarUsuari(string $nom, string $email, string $contrasenya, string $
     $email = strtolower($email);
 
     if (!file_exists($fitxer)) {
-        file_put_contents($fitxer, ""); // Crea el archivo si no existe
+        file_put_contents($fitxer, "");
     }
 
     $usuaris = file($fitxer, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -27,6 +27,14 @@ function missatge(bool $registreExit, string $email): void {
         echo "<p id='correcte'>Usuari registrat correctament: $email</p>";
     } else {
         echo "<p id='error'>Error: El correu $email ja està registrat.</p>";
+    }
+}
+
+function missatgeErrorLogin(string $error) {
+    if (isset($error)) {
+        echo '<div id="error_login">';
+            echo '<span>Error ' . $error . '</span>';
+        echo '</div>';
     }
 }
 ?>
