@@ -12,9 +12,24 @@
             } elseif ($color == "groc") {
                 $_SESSION["estils"] = "css/estilsregistre2.css";
             }
+        }else{
+            $color = "per defecte";
         }
 
+        if (isset($_SESSION["usuari"])) {
+            setcookie($_SESSION["usuari"], $color, time() + (30 * 24 * 60 * 60), "/");
+        }
 	}
+
+	if (isset($_POST["contrasenya"]) && isset($_POST["contrasenya"])) {
+		$contrasenya = $_POST["contrasenya"];
+		$confirmar_contrasenya = $_POST["confirmar_contrasenya"];
+
+		if ($contrasenya != $confirmar_contrasenya) {
+		header("Location: ../index.php?apartat=registre&errorRegistre=contrasenyes");
+		die();
+	}
+	}	
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +70,7 @@
 			$nom = $_POST['nom'] ?? '';
 			$email = $_POST['correu_electronic'] ?? '';
 			$contrasenya = $_POST['contrasenya'] ?? '';
-
+			
 			$registreExit = guardarUsuari($nom, $email, $contrasenya, $fitxer_usuaris);
 			missatge($registreExit, $email);
 
@@ -106,9 +121,18 @@
 					}
 
 					echo '<div class="seccion_formulario"
-						<label><span class="rojo">Contrasenya:</span>  <span class="gris">'.$contrasenya.'</span></label>
+						<label><span class="rojo">Contrasenya:</span> <span class="gris">'.$contrasenya.'</span></label>
 					</div>';
 
+					$confirmar_contrasenya="Sense valor";
+
+					if (isset($_POST['confirmar_contrasenya']) && strlen(trim($_POST['confirmar_contrasenya']))> 0){
+						$contrasenya=trim(htmlspecialchars($_POST['confirmar_contrasenya']));
+					}
+
+					echo '<div class="seccion_formulario"
+					<label><span class="rojo">Confirmar contrasenya:</span> <span class="gris">'.$confirmar_contrasenya.'</span></label>
+					</div>';
 
 					include 'dades.php';
 

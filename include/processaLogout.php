@@ -1,5 +1,4 @@
 <?php
-echo "hola";
 session_start();
 
 $_SESSION = []; 

@@ -17,7 +17,7 @@
             $_SESSION["correo"] = $datos[1];
             if ($contrasenya == $datos[2]) {
                 $contrasenya_correcta = true;
-                $_SESSION["usuari"] = $datos[0];    
+                $_SESSION["usuari"] = $datos[0];
             }
         }
     }

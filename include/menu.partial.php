@@ -2,12 +2,7 @@
     <ul>
         <?php
             if (isset($_SESSION["usuari"]) && $_SESSION["correo"] == "admin@dam.com") {
-                echo '
-                    <li><a href="'.$base.'index.php?apartat=admin">Inici</a></li>
-                    <li><a href="'.$base.'index.php?apartat=admin">Registre</a></li>
-                    <li><a href="'.$base.'index.php?apartat=admin">Contacte</a></li>
-                    <li><a href="'.$base.'index.php?apartat=admin">Botiga</a></li>
-                    ';
+                echo '';
             } else {
                 echo '
                     <li><a href="'.$base.'index.php?apartat=inici">Inici</a></li>

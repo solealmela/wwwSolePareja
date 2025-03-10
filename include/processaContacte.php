@@ -12,8 +12,13 @@
             } elseif ($color == "groc") {
                 $_SESSION["estils"] = "css/estilsregistre2.css";
             }
+        }else{
+            $color = "per defecte";
         }
 
+        if (isset($_SESSION["usuari"])) {
+            setcookie($_SESSION["usuari"], $color, time() + (30 * 24 * 60 * 60), "/");
+        }
 	}
 ?>
 

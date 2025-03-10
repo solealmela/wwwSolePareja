@@ -1,8 +1,11 @@
 <div id= "administracio">
     <h2>Administració</h2>
     <div id="admin">
-        <div id="img_admin">
-            <img src="./img/admin.png" alt="admin">
+        <div id= tabla>
+            <?php
+                include_once("include/funcionsAdmin.php");
+                gestionaUsuaris();
+            ?>
         </div>
     </div>
 </div>

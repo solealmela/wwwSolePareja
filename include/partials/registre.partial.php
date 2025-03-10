@@ -30,6 +30,19 @@
             </div>
 
             <div class="seccion_formulario">
+                <label for="confirmar_contrasenya">Confirmar contrasenya:</label>
+                <input class="input" type="password" name="confirmar_contrasenya" required pattern="^(?!.*:).{6,}$" title="Ha de tindre almenys 6 caràcters i no pot contenir dos punts ( : )"/>
+            </div>
+
+            <?php 
+            include_once("include/funcions.php");
+
+            if (isset($_GET["errorRegistre"])) {
+                missatgeErrorContrasenya($_GET["errorRegistre"]);
+            }
+            ?>
+
+            <div class="seccion_formulario">
                 <label for="poblacio">Població:</label>
                 <select id="poblacio" name="poblacio" class="input">
                     <option value="" selected disabled>Selecciona una opción</option>

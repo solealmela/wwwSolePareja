@@ -91,7 +91,7 @@
     font-weight: bold;
 }
 
-#error_login {
+.missatgeError {
     border: solid 4px red;
     padding: 10px;
     color: red;
@@ -262,6 +262,37 @@
 
 #img_construccio img, #img_admin img {
     width: 40%;
+}
+
+#tabla {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+table td, table th {
+    padding: 10px;
+    margin: 1px;
+}
+
+table td {
+    background-color: rgb(231, 231, 231);
+}
+
+table th {
+    background-color: rgb(255, 219, 152);
+}
+
+.estilo_admin {
+    background-color: white;
+    color: gray;
+    font-style: italic;
 }
 
 #registre, #contacte {

@@ -89,7 +89,7 @@
     font-weight: bold;
 }
 
-#error_login {
+.missatgeError {
     border: solid 4px red;
     padding: 10px;
     color: red;

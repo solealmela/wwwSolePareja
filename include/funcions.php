@@ -32,8 +32,16 @@ function missatge(bool $registreExit, string $email): void {
 
 function missatgeErrorLogin(string $error) {
     if (isset($error)) {
-        echo '<div id="error_login">';
+        echo '<div class="missatgeError">';
             echo '<span>Error ' . $error . '</span>';
+        echo '</div>';
+    }
+}
+
+function missatgeErrorContrasenya(string $error) {
+    if (isset($error)) {
+        echo '<div class="missatgeError">';
+            echo '<span>Les contrasenyes no coincideixen</span>';
         echo '</div>';
     }
 }
