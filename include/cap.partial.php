@@ -4,8 +4,8 @@
 
     <div id='contenedor_registro'>
         <?php 
-            include_once($_SERVER['DOCUMENT_ROOT'] . "/wwwSolePareja/include/partials/css.partial.php");
-            include_once($_SERVER['DOCUMENT_ROOT'] . "/wwwSolePareja/include/partials/data.partial.php");
+            include_once("partials/css.partial.php");
+            include_once("partials/data.partial.php");
         ?>
     </div>
  

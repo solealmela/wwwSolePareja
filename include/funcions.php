@@ -17,7 +17,9 @@ function guardarUsuari(string $nom, string $email, string $contrasenya, string $
         }
     }
 
-    $nova_linia = "$nom:$email:$contrasenya:\n";
+    $contrasenya_encriptada = password_hash($contrasenya, PASSWORD_DEFAULT);
+
+    $nova_linia = "$nom:$email:$contrasenya_encriptada:\n";
     file_put_contents($fitxer, $nova_linia, FILE_APPEND | LOCK_EX);
     return true;
 }
@@ -44,5 +46,27 @@ function missatgeErrorContrasenya(string $error) {
             echo '<span>Les contrasenyes no coincideixen</span>';
         echo '</div>';
     }
+}
+
+function mostraProductes($rutaFitxer) {
+    include($rutaFitxer);
+
+    if (!isset($productes) || !is_array($productes)) {
+        echo "<p>No hi ha productes per mostrar.</p>";
+        return;
+    }
+
+    echo '<div class="llista-productes">';
+
+    foreach ($productes as $id => $dades) {
+        echo '<div class="producte">';
+        echo '<h3>' . htmlspecialchars($dades["nom"]) . '</h3>';
+        echo '<img src="img/productes/botiga/' . htmlspecialchars($dades["imatge"]) . '" alt="' . htmlspecialchars($dades["nom"]) . '">';
+        echo '<p id="descripcio">' . htmlspecialchars($dades["descripcio"]) . '</p>';
+        echo '<p id="preu"><strong>Preu: </strong>' . number_format($dades["preu"], 2) . ' €</p>';
+        echo '</div>';
+    }
+
+    echo '</div>';
 }
 ?>

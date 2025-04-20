@@ -1,1 +1,2 @@
-admin:admin@dam.com:administrador:
+admin:admin@dam.com:$2a$12$QW.nFxRxcmg6Bvd5HltpgeHrsNcehni.wzF41vf0nhR18J7evWD1u:
+sole:solealmela@gmail.com:$2y$10$shap6buO1SR/kge.67iLtu8CUZQf9uUvomAEe/h4c0A2i4vDEQee2:

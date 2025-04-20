@@ -43,15 +43,15 @@
 	<body id = "wrapper">
 		<?php
 
-        include_once ("./include/cap.partial.php");
+        include_once ("include/cap.partial.php");
 
-        include_once ("./include/partials/login.partial.php");
+        include_once ("include/partials/login.partial.php");
 
-        include_once ("./include/menu.partial.php");
+        include_once ("include/menu.partial.php");
 
-        include_once ("./include/principal.partial.php");
+        include_once ("include/principal.partial.php");
 
-		include_once ("./include/peu.partial.php");
+		include_once ("include/peu.partial.php");
 
         ?>
 	</body>
