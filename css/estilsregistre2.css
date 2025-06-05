@@ -135,6 +135,13 @@
     border:solid 2px rgb(129, 112, 0);
 }
 
+#menu a {
+    text-decoration: none;
+    color: inherit; 
+    font-weight: bold;
+    color: blue;
+}
+
 #principal{
     width:80%;
     margin:10px auto 10px auto;
@@ -423,4 +430,10 @@ table th, table td {
     background-color: #feffbf;
     margin-top: 5px;
     padding: 5px;
+}
+
+#menu ul li.actiu {
+    background-color: rgb(193, 196, 20);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }

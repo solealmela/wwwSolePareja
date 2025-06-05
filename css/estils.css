@@ -5,34 +5,34 @@
 }
 
 
-#wrapper{
-    width:80%;
-    margin: 1% 10% 1% 10%;
+#wrapper {
+    width: 100%;
+    margin: 1% auto;
     background-color: rgb(230, 229, 229);
 }
 
-#cap{
-    width:80%;
+#cap {
+    width: 80%;
     margin: auto;
     margin-bottom: 0;
-    border:solid 1px black;
-    padding:10px;
-    background-color:rgb(237, 175, 95);
+    border: solid 1px black;
+    padding: 10px;
+    background-color: rgb(237, 175, 95);
     border-radius: 40px 40px 0px 0px;
     border: solid 2px black;
-    text-align:center;
+    text-align: center;
 }
 
 #cap h1 {
-    margin:10px;
+    margin: 10px;
 }
 
-#cap h2{
+#cap h2 {
     margin: 0 30% 0 30%;
     padding: 10px;
     background-color: #bfff9a;
     border-radius: 50px;
-    border:solid 2px #91c474;
+    border: solid 2px #91c474;
 }
 
 #contenedor_registro {
@@ -45,26 +45,26 @@
     text-align: center;
     color: #3d891b;
     margin: 1%;
-    padding: 10px; 
-    font-size:17px; 
-    font-weight:bold; 
-    background-color: white;    
-    border: 4px solid #3d891b; 
-    border-radius:30px; 
+    padding: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: white;
+    border: 4px solid #3d891b;
+    border-radius: 30px;
 }
 
 #form_login {
-    width:80%;
+    width: 80%;
     margin: auto;
     margin-top: 0;
     border: solid 2px black;
-    padding:10px;
+    padding: 10px;
     background-color: #82e1a6;
     display: flex;
 }
 
 #form_login form {
-    position: relative; 
+    position: relative;
     border: solid 4px #176433;
     width: 60%;
     margin: 10px auto;
@@ -76,15 +76,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 20px; 
+    padding: 20px;
 
 }
 
 #palabra_login {
     position: absolute;
-    top: -18px; 
-    left: 20px; 
-    background-color: white; 
+    top: -18px;
+    left: 20px;
+    background-color: white;
     padding: 3px 10px;
     border: solid 4px #176433;
     border-radius: 10px;
@@ -109,11 +109,11 @@
 }
 
 #menu {
-    width:80%;
+    width: 80%;
     margin: auto;
     margin-top: 0;
     border: solid 2px black;
-    padding:10px;
+    padding: 10px;
     background-color: #e7f3a1;
     border-radius: 0px 0px 40px 40px;
 }
@@ -125,24 +125,30 @@
     display: flex;
     gap: 50px;
     justify-content: center;
-
 }
 
-#menu ul li{
+#menu ul li {
     width: 13%;
     text-align: center;
     margin: 10px;
     padding: 15px;
     background-color: aqua;
-    border:solid 2px rgb(0, 129, 129);
+    border: solid 2px rgb(0, 129, 129);
 }
 
-#principal{
-    width:80%;
-    margin:10px auto 10px auto;
+#menu a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    color: blue;
+}
+
+#principal {
+    width: 80%;
+    margin: 10px auto 10px auto;
     border: solid 2px black;
-    padding:10px;
-    background-color:white;
+    padding: 10px;
+    background-color: white;
     text-align: center;
     border-radius: 10px;
 }
@@ -157,20 +163,20 @@
     margin-bottom: 10px;
 }
 
-#peu{
-    width:80%;
-    margin:10px auto 10px auto;
-    border:solid 2px black;
-    padding:10px;
+#peu {
+    width: 80%;
+    margin: 10px auto 10px auto;
+    border: solid 2px black;
+    padding: 10px;
     background-color: #e7f3a1;
     border-radius: 0px 0px 40px 40px;
-    text-align:center;
+    text-align: center;
 
 }
 
-#peu p{
-    width:50%;
-    margin:10px auto 10px auto;
+#peu p {
+    width: 50%;
+    margin: 10px auto 10px auto;
 }
 
 #peu img {
@@ -180,18 +186,18 @@
 /* partials */
 
 #inici {
-    width:80%;
-    margin:10px auto 10px auto;
+    width: 80%;
+    margin: 10px auto 10px auto;
     border: solid 2px black;
-    padding:10px;
-    background-color:white;
+    padding: 10px;
+    background-color: white;
     text-align: center;
     border-radius: 40px 40px 0px 0px;
 }
 
 #inici h2 {
     background-color: #ff8170;
-    border:solid 2px black;
+    border: solid 2px black;
     padding: 15px;
     margin: 0 25% 0 25%;
 }
@@ -199,12 +205,12 @@
 #benvinguda {
     background-color: #e7f3a1;
     border: solid 2px black;
-    margin:10px auto 10px auto;
+    margin: 10px auto 10px auto;
 }
 
 #benvinguda h3 {
     background-color: rgb(195, 195, 255);
-    margin: 1% 30% 1% 30%;    
+    margin: 1% 30% 1% 30%;
     padding: 15px;
     border: solid 2px black;
 
@@ -222,45 +228,50 @@
 }
 
 
-#botiga, #administracio {
-    width:80%;
-    margin:10px auto 10px auto;
+#botiga,
+#administracio {
+    width: 80%;
+    margin: 10px auto 10px auto;
     border: solid 2px black;
-    padding:10px;
-    background-color:white;
+    padding: 10px;
+    background-color: white;
     text-align: center;
     border-radius: 40px 40px 0px 0px;
 }
 
-#botiga h2, #administracio h2 {
+#botiga h2,
+#administracio h2 {
     background-color: #ff8170;
-    border:solid 2px black;
+    border: solid 2px black;
     padding: 15px;
     margin: 0 25% 0 25%;
 }
 
-#construccio, #admin {
+#construccio,
+#admin {
     background-color: #e7f3a1;
     border: solid 2px black;
-    margin:10px auto 10px auto;
+    margin: 10px auto 10px auto;
 }
 
 #construccio h3 {
     background-color: rgb(195, 195, 255);
-    margin: 1% 30% 1% 30%;    
+    margin: 1% 30% 1% 30%;
     padding: 15px;
     border: solid 2px black;
 
 }
 
-#img_construccio, #img_admin {
+#img_construccio,
+#img_admin {
     background-color: white;
     border-radius: 40px;
     margin: 15px;
     padding: 15px;
 }
 
-#img_construccio img, #img_admin img {
+#img_construccio img,
+#img_admin img {
     width: 40%;
 }
 
@@ -276,7 +287,8 @@ table {
     border: 2px solid black;
 }
 
-table td, table th {
+table td,
+table th {
     padding: 10px;
     margin: 1px;
 }
@@ -295,19 +307,21 @@ table th {
     font-style: italic;
 }
 
-#registre, #contacte {
-    width:80%;
-    margin:10px auto 10px auto;
+#registre,
+#contacte {
+    width: 80%;
+    margin: 10px auto 10px auto;
     border: solid 2px black;
-    padding:10px;
-    background-color:white;
+    padding: 10px;
+    background-color: white;
     text-align: center;
     border-radius: 40px 40px 0px 0px;
 }
 
-#registre h2, #contacte h2 {
+#registre h2,
+#contacte h2 {
     background-color: #ff8170;
-    border:solid 2px black;
+    border: solid 2px black;
     padding: 15px;
     margin: 0 25% 0 25%;
 }
@@ -315,7 +329,7 @@ table th {
 #formulario {
     background-color: #e7f3a1;
     border: solid 2px black;
-    margin:10px auto 10px auto;
+    margin: 10px auto 10px auto;
     padding: 20px;
 }
 
@@ -323,7 +337,7 @@ table th {
     border: solid 2px green;
     padding: 10px;
     margin: 1% 15% 1% 15%;
-    background-color: #f5ffbf;    
+    background-color: #f5ffbf;
 }
 
 #formulario form .input {
@@ -345,7 +359,7 @@ table th {
 
 #productes #titulo {
     background-color: rgb(195, 195, 255);
-    margin: 1% 30% 1% 30%;    
+    margin: 1% 30% 1% 30%;
     padding: 15px;
     border: solid 2px black;
 }
@@ -395,4 +409,74 @@ table th {
     background-color: #f5ffbf;
     margin-top: 5px;
     padding: 5px;
+}
+
+.producte #formulari {
+    border: 2px solid rgb(3, 106, 132);
+    border-radius: 10px;
+    background-color: rgb(224, 224, 255);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.botonFormulario {
+    margin-top: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 7 px;
+}
+
+#menu ul li.actiu {
+    background-color: rgb(247, 217, 108);
+    color: blue;
+    font-weight: bold;
+}
+
+.main-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.content-zone {
+    flex: 1;
+    min-width: 0;
+}
+
+.carret-zone {
+    background-color: #f4f4f4;
+    border: 4px solid #176433;
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.info-carret {
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+}
+
+.info-carret h3 {
+    background-color: #ffcb6b;
+    border: 2px solid blue;
+    padding: 5px;
+    border-radius: 10px;
+    color: blue;
+}
+
+.info-carret ul {
+    list-style-type: none;
+}
+
+.info-carret ul li {
+    background-color: #f9fabe;
+    border: 2px solid blue;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px 10px 5px 10px;
+    color: blue;
 }

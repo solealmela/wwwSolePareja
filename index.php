@@ -1,4 +1,5 @@
 <?php
+    include_once ("include/productes.php");
     session_start();
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,6 +21,30 @@
             setcookie($_SESSION["usuari"], $color, time() + (30 * 24 * 60 * 60), "/");
         }
 	}
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['envia'])) {
+            $idProducte = $_POST['idProducte'];
+            $quantitatProducte = $_POST['quantitatProducte'];
+
+            
+            if (isset($productes[$idProducte])) {
+                $nomProducte = $productes[$idProducte]['nom'];
+                $preuUnitari = $productes[$idProducte]['preu'];
+                $preuTotal = $preuUnitari * $quantitatProducte;
+
+                $_SESSION['idProducte'] = $idProducte;
+                $_SESSION['nomProducte'] = $nomProducte;
+                $_SESSION['preu'] = $preuUnitari;
+                $_SESSION['quantitatProducte'] = $quantitatProducte;
+                $_SESSION['preuTotal'] = $preuTotal;
+            }
+
+           header("Location: index.php?apartat=botiga#botiga");
+            exit();
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -40,19 +65,20 @@
 		?>
 		<link rel="stylesheet" href="<?php echo $estil_css; ?>">
 	</head>
-	<body id = "wrapper">
-		<?php
+    <body id="wrapper">
+        <div class="main-layout">
+            <div class="content-zone">
+                <?php include_once("include/cap.partial.php"); ?>
+                <?php include_once("include/partials/login.partial.php"); ?>
+                <?php include_once("include/menu.partial.php"); ?>
+                <?php include_once("include/principal.partial.php"); ?>
+                <?php include_once("include/peu.partial.php"); ?>
+            </div>
 
-        include_once ("include/cap.partial.php");
+            <div class="carret-zone">
+                <?php include_once("include/infoCarret.partial.php"); ?>
+            </div>
+        </div>
+    </body>
 
-        include_once ("include/partials/login.partial.php");
-
-        include_once ("include/menu.partial.php");
-
-        include_once ("include/principal.partial.php");
-
-		include_once ("include/peu.partial.php");
-
-        ?>
-	</body>
 </html>

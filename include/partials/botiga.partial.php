@@ -7,4 +7,4 @@
         mostraProductes('include/productes.php');
         ?>
     </div>
-</div>          
+</div>
