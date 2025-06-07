@@ -1,49 +1,91 @@
 <?php
-    include_once ("include/productes.php");
-    session_start();
+include_once("include/productes.php");
+session_start();
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $_SESSION["estils"] = "";
+require_once("include/entity/Producte.php");
+require_once("include/entity/CarretCompra.php");
 
-        if (isset($_POST['estils_registre'])){
-            $color = $_POST['estils_registre'];
+// Cargar carrito de sesión o crear uno nuevo
+if (isset($_SESSION['carret'])) {
+    $carret = unserialize($_SESSION['carret']);
+} else {
+    $idUsuari = isset($_SESSION['usuari']) ? $_SESSION['usuari'] : session_id();
+    $carret = new CarretCompra($idUsuari);
+}
 
-            if ($color == "morat") {
-                $_SESSION["estils"] = "css/estilsregistre1.css";
-            } elseif ($color == "groc") {
-                $_SESSION["estils"] = "css/estilsregistre2.css";
-            }
-        }else{
-            $color = "per defecte";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Gestión estilos
+    $_SESSION["estils"] = "";
+
+    if (isset($_POST['estils_registre'])) {
+        $color = $_POST['estils_registre'];
+        if ($color == "morat") {
+            $_SESSION["estils"] = "css/estilsregistre1.css";
+        } elseif ($color == "groc") {
+            $_SESSION["estils"] = "css/estilsregistre2.css";
         }
+    } else {
+        $color = "per defecte";
+    }
 
-        if (isset($_SESSION["usuari"])) {
-            setcookie($_SESSION["usuari"], $color, time() + (30 * 24 * 60 * 60), "/");
-        }
-	}
+    if (isset($_SESSION["usuari"])) {
+        setcookie($_SESSION["usuari"], $color, time() + (30 * 24 * 60 * 60), "/");
+    }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['envia'])) {
-            $idProducte = $_POST['idProducte'];
-            $quantitatProducte = $_POST['quantitatProducte'];
+    // Añadir producto al carrito
+    if (isset($_POST['envia'])) {
+        $idProducte = $_POST['idProducte'] ?? null;
+        $quantitatProducte = $_POST['quantitatProducte'] ?? 0;
 
+        // Validar cantidad
+        if ($idProducte !== null && is_numeric($quantitatProducte) && $quantitatProducte > 0) {
             
-            if (isset($productes[$idProducte])) {
-                $nomProducte = $productes[$idProducte]['nom'];
-                $preuUnitari = $productes[$idProducte]['preu'];
+            include_once("include/entity/CredencialsBD.php");
+
+            $servidor = "localhost";
+            $usuari = CredencialsBD::USUARI;
+            $contrasenya = CredencialsBD::CONTRASENYA;
+            $basedades = "proyectoPHPSole";
+
+            $conn = new mysqli($servidor, $usuari, $contrasenya, $basedades);
+
+            if ($conn->connect_error) {
+                die("Error de connexió: " . $conn->connect_error);
+            }
+
+            $stmt = $conn->prepare("SELECT nom, preu FROM producte WHERE id = ?");
+            $stmt->bind_param("i", $idProducte);
+            $stmt->execute();
+            $stmt->bind_result($nomProducte, $preuUnitari);
+
+            if ($stmt->fetch()) {
                 $preuTotal = $preuUnitari * $quantitatProducte;
 
+                // Guardar último producto añadido en sesión (para infoCarret.partial.php)
                 $_SESSION['idProducte'] = $idProducte;
                 $_SESSION['nomProducte'] = $nomProducte;
                 $_SESSION['preu'] = $preuUnitari;
                 $_SESSION['quantitatProducte'] = $quantitatProducte;
                 $_SESSION['preuTotal'] = $preuTotal;
+
+                $producte = new Producte($idProducte, $nomProducte, $quantitatProducte, $preuUnitari, '');
+
+                // Añadir o actualizar producto en carrito
+                $carret->afegirProducte($producte);
+
+                // Serializar y guardar carrito actualizado en sesión
+                $_SESSION['carret'] = serialize($carret);
             }
 
-           header("Location: index.php?apartat=botiga#botiga");
+            $stmt->close();
+            $conn->close();
+
+            // Redirigir para evitar reenvío del formulario
+            header("Location: index.php?apartat=botiga#botiga");
             exit();
         }
     }
+}
 
 ?>
 

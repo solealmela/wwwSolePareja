@@ -103,4 +103,54 @@
 
         file_put_contents($fitxerLog, $missatge, FILE_APPEND);
     }
+
+    function mostraProductesBD() {
+        include_once('entity/CredencialsBD.php');
+
+        $servidor = "localhost";
+        $usuari = CredencialsBD::USUARI;
+        $contrasenya = CredencialsBD::CONTRASENYA;
+        $basedades = "proyectoPHPSole";
+
+        $connexio = new mysqli($servidor, $usuari, $contrasenya, $basedades);
+
+        if ($connexio->connect_error) {
+            echo "<p>No s'ha pogut connectar a la base de dades.</p>";
+            return;
+        }
+
+        $sql = "SELECT * FROM producte";
+        $resultat = $connexio->query($sql);
+
+        if (!$resultat || $resultat->num_rows === 0) {
+            echo "<p>No hi ha productes per mostrar.</p>";
+            return;
+        }
+
+        echo '<div class="llista-productes">';
+
+        while ($fila = $resultat->fetch_assoc()) {
+            $id = htmlspecialchars($fila['id']);
+            $nom = htmlspecialchars($fila['nom']);
+            $imatge = htmlspecialchars($fila['imatge']);
+            $descripcio = htmlspecialchars($fila['descripcio']);
+            $preu = number_format((float)$fila['preu'], 2);
+
+            echo '<div class="producte">';
+                echo '<h3>' . $nom . '</h3>';
+                echo '<img src="img/productes/botiga/' . $imatge . '" alt="' . $nom . '">';
+                echo '<p id="descripcio">' . $descripcio . '</p>';
+                echo '<p id="preu"><strong>Preu: </strong>' . $preu . ' €</p>';
+                echo '<div id="formulari">';
+                    mostraFormulariProducte($id);
+                echo '</div>';
+            echo '</div>';
+        }
+
+        echo '</div>';
+
+        $connexio->close();
+    }
+
+
 ?>

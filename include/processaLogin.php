@@ -1,5 +1,8 @@
 <?php
 include_once("./funcions.php");
+include_once("../include/entity/CarretCompra.php");
+include_once("../include/entity/Producte.php");
+
 session_start();
 
 $usuaris_registrats = file("../usuaris/passwd.txt");
@@ -22,6 +25,17 @@ foreach ($usuaris_registrats as $usuari) {
         if (password_verify($contrasenya, $hash_guardado)) {
             $contrasenya_correcta = true;
             $_SESSION["usuari"] = $datos[0];
+
+            if (isset($_SESSION['carret'])) {
+                $carret = unserialize($_SESSION['carret']);
+                
+                if ($carret instanceof CarretCompra) {
+                    $carret->setIdUsuari($datos[1]);
+                    $_SESSION['carret'] = serialize($carret);
+                    unset($carret);
+                }
+            }
+
             break;
         }
     }

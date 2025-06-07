@@ -4,7 +4,7 @@
     <h3 id="titulo">Productes disponibles</h3>
         <?php
         include_once('include/funcions.php');
-        mostraProductes('include/productes.php');
+        mostraProductesBD('include/productes.php');
         ?>
     </div>
 </div>
