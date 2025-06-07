@@ -480,3 +480,27 @@ table th {
     margin: 5px 10px 5px 10px;
     color: blue;
 }
+
+.log-registre { 
+    background-color: #d1e7dd; padding: 5px; 
+}
+
+.log-login-correcte { 
+    background-color: #cfe2ff; padding: 5px; 
+}
+
+.log-login-incorrecte { 
+    background-color: #f8d7da; padding: 5px; 
+}
+
+.log-logout { 
+    background-color: #fff3cd; padding: 5px; 
+}
+
+.log-eliminacio { 
+    background-color: #f5c2c7; padding: 5px;
+}
+
+.log-default {
+    background-color: #e2e3e5; padding: 5px;
+}

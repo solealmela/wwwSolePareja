@@ -6,7 +6,7 @@ $productes = [
         "preu" => 0.75,
         "descripcio" => "Pomes dolces i cruixents, ideals per a esmorzars i berenars."
     ],
-    "FV002" => [
+    "FV002" => [    
         "nom" => "Taronja de València",
         "imatge" => "taronja.jpg",
         "preu" => 0.60,

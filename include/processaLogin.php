@@ -1,4 +1,5 @@
 <?php
+include_once("./funcions.php");
 session_start();
 
 $usuaris_registrats = file("../usuaris/passwd.txt");
@@ -27,13 +28,17 @@ foreach ($usuaris_registrats as $usuari) {
 }
 
 if (!$correu_correcte) {
+    escriureLog("anònim", "Login incorrecte - correu inexistent: $correu");
     $error = "?error=usuari";
 } else if (!$contrasenya_correcta) {
+    escriureLog($datos[0], "Login incorrecte - contrasenya incorrecta");
     $error = "?error=contrasenya";
 } else {
+    escriureLog($datos[0], "Login correcte");
     $error = "";
 }
 
 header("Location: ../index.php" . $error);
 exit;
+
 ?>

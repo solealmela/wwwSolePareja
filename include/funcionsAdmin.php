@@ -55,4 +55,32 @@ function gestionaUsuaris() {
     echo "</table>";
     echo "</div>";
 }
+
+function mostraLog() {
+    $ruta_log = dirname(__FILE__, 2) . "/log/registre.log";
+
+    if (!file_exists($ruta_log) || filesize($ruta_log) == 0) {
+        echo "<p>No hi ha registres per mostrar.</p>";
+        return;
+    }
+
+    $linies = file($ruta_log);
+
+    foreach ($linies as $linia) {
+        if (stripos($linia, "Login correcte") !== false) {
+            echo "<div class='log log-correcte'>" . htmlspecialchars($linia) . "</div>";
+        } elseif (stripos($linia, "Login incorrecte") !== false) {
+            echo "<div class='log log-error'>" . htmlspecialchars($linia) . "</div>";
+        } elseif (stripos($linia, "Registre") !== false) {
+            echo "<div class='log log-registre'>" . htmlspecialchars($linia) . "</div>";
+        } elseif (stripos($linia, "Logout") !== false) {
+            echo "<div class='log log-logout'>" . htmlspecialchars($linia) . "</div>";
+        } elseif (stripos($linia, "Eliminació") !== false) {
+            echo "<div class='log log-eliminacio'>" . htmlspecialchars($linia) . "</div>";
+        } else {
+            echo "<div class='log'>" . htmlspecialchars($linia) . "</div>";
+        }
+    }
+}
+
 ?>

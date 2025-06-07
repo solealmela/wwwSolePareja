@@ -92,4 +92,15 @@
             </form>
         ';
     }
+
+    function escriureLog($nomUsuari, $accio) {
+        $rutaBase = dirname(__FILE__,2);
+        $fitxerLog = $rutaBase . '/log/registre.log';
+
+        $dataHora = date("Y-m-d H:i:s");
+
+        $missatge = "[$dataHora] Usuari: $nomUsuari - Acció: $accio" . PHP_EOL;
+
+        file_put_contents($fitxerLog, $missatge, FILE_APPEND);
+    }
 ?>

@@ -1,4 +1,5 @@
 <?php
+	include_once('./funcions.php');
     session_start();
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -73,6 +74,9 @@
 			
 			$registreExit = guardarUsuari($nom, $email, $contrasenya, $fitxer_usuaris);
 			missatge($registreExit, $email);
+			if ($registreExit) {
+				escriureLog($nom, "Registre");
+			}
 
             echo '<div id="formulario">';
 
