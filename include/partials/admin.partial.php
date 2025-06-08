@@ -1,28 +1,20 @@
-<div id= "administracio">
+<div id="administracio">
     <h2>Administració</h2>
+
+    <?php include_once("include/partials/menuAdmin.partial.php"); ?>
+
     <div id="admin">
-        <div id= tabla>
+        <div id="tabla">
             <?php
                 include_once("include/funcionsAdmin.php");
-                gestionaUsuaris();
-            ?>
-        </div>
-        <div id="log-controls" style="margin-top: 20px;">
-            <?php
-                $mostrarLog = $_GET['mostrarLog'] ?? 'false';
 
-                if ($mostrarLog === 'true') {
-                    echo '<a href="?mostrarLog=false">Oculta Log</a>';
-                } else {
-                    echo '<a href="?mostrarLog=true">Mostra Log</a>';
-                }
-            ?>
-        </div>
-
-        <div id="log-content" style="margin-top: 10px;">
-            <?php
-                if ($mostrarLog === 'true') {
-                    mostraLog();
+                $apartat = $_GET['apartatAdmin'] ?? 'usuaris';
+                if ($apartat === 'usuaris') {
+                    gestionaUsuaris();
+                } elseif ($apartat === 'comandes') {
+                    gestionaComandes();
+                } elseif ($apartat === 'productes') {
+                    gestionaProductes();
                 }
             ?>
         </div>

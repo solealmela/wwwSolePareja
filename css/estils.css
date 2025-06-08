@@ -649,3 +649,60 @@ table th {
     color: white;
     border-radius: 5px;
 }
+
+#menu-admin {
+    margin: 20px;
+    background-color: #ff8170;
+    padding: 20px;
+    border: 3px solid black;
+}
+
+#menu-admin ul {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu-admin li a,
+#menu-admin li span {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+    border: 3px solid blue;
+    background-color: rgb(185, 185, 255);
+    transition: background-color 0.3s;
+}
+
+#menu-admin li.actiu span {
+    background-color: #ffdda6;
+    color: blue;
+    border: 3px solid blue;
+    cursor: default;
+}
+
+.taula-admin {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.taula-admin th, .taula-admin td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.taula-admin img.miniatura {
+    width: 100px;
+    height: auto;
+}
+
+.icona {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+}
