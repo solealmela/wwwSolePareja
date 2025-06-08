@@ -234,7 +234,7 @@
     margin: 10px auto 10px auto;
     border: solid 2px black;
     padding: 10px;
-    background-color: white;
+    background-color: white;    
     text-align: center;
     border-radius: 40px 40px 0px 0px;
 }
@@ -503,4 +503,51 @@ table th {
 
 .log-default {
     background-color: #e2e3e5; padding: 5px;
+}
+
+.boto_enllaç {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 16px;
+    width: 80%;
+    background-color: rgb(146, 255, 206);
+    color: blue;
+    text-decoration: none;
+    border: 2px solid blue;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.boto_enllaç:hover {
+    background-color: rgb(98, 207, 158);
+}
+
+#missatge-buit {
+    font-size: 1.2rem;
+    color: red;
+    background-color: #ffecec;
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: center;
+}
+
+#boto-retorn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #c9e3ff;
+    color: blue;
+    border: 2px solid blue;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#boto-retorn:hover {
+    background-color: #9bbadb;
 }

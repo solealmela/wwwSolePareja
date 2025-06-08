@@ -5,7 +5,6 @@ session_start();
 require_once("include/entity/Producte.php");
 require_once("include/entity/CarretCompra.php");
 
-// Cargar carrito de sesión o crear uno nuevo
 if (isset($_SESSION['carret'])) {
     $carret = unserialize($_SESSION['carret']);
 } else {
@@ -14,7 +13,6 @@ if (isset($_SESSION['carret'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Gestión estilos
     $_SESSION["estils"] = "";
 
     if (isset($_POST['estils_registre'])) {
@@ -32,12 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         setcookie($_SESSION["usuari"], $color, time() + (30 * 24 * 60 * 60), "/");
     }
 
-    // Añadir producto al carrito
     if (isset($_POST['envia'])) {
         $idProducte = $_POST['idProducte'] ?? null;
         $quantitatProducte = $_POST['quantitatProducte'] ?? 0;
 
-        // Validar cantidad
         if ($idProducte !== null && is_numeric($quantitatProducte) && $quantitatProducte > 0) {
             
             include_once("include/entity/CredencialsBD.php");
@@ -61,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($stmt->fetch()) {
                 $preuTotal = $preuUnitari * $quantitatProducte;
 
-                // Guardar último producto añadido en sesión (para infoCarret.partial.php)
                 $_SESSION['idProducte'] = $idProducte;
                 $_SESSION['nomProducte'] = $nomProducte;
                 $_SESSION['preu'] = $preuUnitari;
@@ -70,17 +65,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $producte = new Producte($idProducte, $nomProducte, $quantitatProducte, $preuUnitari, '');
 
-                // Añadir o actualizar producto en carrito
                 $carret->afegirProducte($producte);
 
-                // Serializar y guardar carrito actualizado en sesión
                 $_SESSION['carret'] = serialize($carret);
             }
 
             $stmt->close();
             $conn->close();
 
-            // Redirigir para evitar reenvío del formulario
             header("Location: index.php?apartat=botiga#botiga");
             exit();
         }
