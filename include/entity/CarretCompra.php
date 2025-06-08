@@ -34,7 +34,8 @@ class CarretCompra
         $this->productes = $productes;
     }
 
-    public function afegirProducte(Producte $producte): void {
+    public function afegirProducte(Producte $producte): void
+    {
         $id = $producte->getId();
         if (isset($this->productes[$id])) {
             $quantitatActual = $this->productes[$id]->getQuantitat();
@@ -44,11 +45,12 @@ class CarretCompra
             $this->productes[$id] = $producte;
         }
 
-        $this -> ordenarProductesPerId();
+        $this->ordenarProductesPerId();
     }
 
-    private function ordenarProductesPerId(): void {
-        uksort($this->productes, function($a, $b) {
+    private function ordenarProductesPerId(): void
+    {
+        uksort($this->productes, function ($a, $b) {
             return $a <=> $b;
         });
     }
@@ -76,7 +78,7 @@ class CarretCompra
 
     public function mostrarCarret(): void {
         if (empty($this->productes)) {
-            echo "<p id='missatge-buit'>El carret està buit.</p>";
+            echo "<p class='missatge-buit'>El carret està buit.</p>";
             return;
         }
 
@@ -111,8 +113,42 @@ class CarretCompra
         }
     }
 
-    public function buidarCarret(): void
-    {
+    public function buidarCarret(): void {
         $this->productes = [];
     }
+
+    public function mostrarCarretCompra(): void {
+        if (empty($this->productes)) {
+            echo "<p>El carret està buit.</p>";
+            return;
+        }
+
+        echo "<h3>Resum de la compra:</h3>";
+        echo "<table class='fitxa-carret'>";
+        echo "<tr><th>Producte</th><th>Quantitat (kg)</th><th>Preu €/kg</th><th>Total</th></tr>";
+
+        $preuTotal = 0;
+
+        foreach ($this->productes as $producte) {
+            $nom = htmlspecialchars($producte->getNom());
+            $quantitat = number_format($producte->getQuantitat(), 2);
+            $preu = number_format($producte->getPreu(), 2);
+            $total = $producte->getQuantitat() * $producte->getPreu();
+            $preuTotal += $total;
+
+            echo "<tr>";
+            echo "<td>$nom</td>";
+            echo "<td>$quantitat</td>";
+            echo "<td>$preu €</td>";
+            echo "<td>" . number_format($total, 2) . " €</td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+
+        $numProductes = count($this->productes);
+        echo "<p class='resum_compra'><strong>Quantitat de productes:</strong> $numProductes</p>";
+        echo "<p class='resum_compra'><strong>Total de la compra:</strong> " . number_format($preuTotal, 2) . " €</p>";
+    }
 }
+?>

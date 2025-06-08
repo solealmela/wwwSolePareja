@@ -562,7 +562,7 @@ table td {
     background-color: rgb(241, 132, 230);
 }
 
-#missatge-buit {
+.missatge-buit {
     font-size: 1.2rem;
     color: red;
     background-color: #ffecec;
@@ -586,4 +586,12 @@ table td {
 
 #boto-retorn:hover {
     background-color: rgb(250, 147, 229);
+}
+
+.missatge-autenticacio {
+    padding: 10px;
+    margin: 20px;
+    color: purple;
+    border:2px solid purple;
+    background-color: rgb(245, 177, 245);
 }

@@ -526,7 +526,7 @@ table th {
     background-color: rgb(98, 207, 158);
 }
 
-#missatge-buit {
+.missatge-buit {
     font-size: 1.2rem;
     color: red;
     background-color: #ffecec;
@@ -550,4 +550,34 @@ table th {
 
 #boto-retorn:hover {
     background-color: #9bbadb;
+}
+
+.missatge-autenticacio {
+    padding: 10px;
+    margin: 20px;
+    color: red;
+    border:2px solid red;
+    background-color: rgb(254, 234, 107);
+}
+
+.resum_compra {
+    padding: 10px;
+    margin: 10px 30px 10px 30px;
+    background-color: #bfff9a;
+    border: 3px solid green;
+    color: green;
+}
+
+.fitxa-carret {
+    margin: 30px auto;
+}
+
+.missatge-compra {
+    background-color: #e6ffe6;
+    border: 1px solid #00cc66;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #006633;
+    font-weight: bold;
+    border-radius: 5px;
 }
