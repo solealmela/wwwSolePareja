@@ -586,3 +586,25 @@ table th, table td {
     border:2px solid rgb(136, 136, 5);
     background-color: rgb(255, 255, 175);
 }
+
+.resum_compra {
+    padding: 10px;
+    margin: 10px 30px 10px 30px;
+    background-color: #fffa9a;
+    border: 3px solid rgb(111, 128, 0);
+    color: rgb(115, 128, 0);
+}
+
+.fitxa-carret {
+    margin: 30px auto;
+}
+
+.missatge-compra {
+    background-color: #fffee6;
+    border: 1px solid #ccc900;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #556600;
+    font-weight: bold;
+    border-radius: 5px;
+}

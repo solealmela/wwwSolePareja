@@ -229,7 +229,8 @@
 
 
 #botiga,
-#administracio {
+#administracio,
+#canviImatge {
     width: 80%;
     margin: 10px auto 10px auto;
     border: solid 2px black;
@@ -240,7 +241,8 @@
 }
 
 #botiga h2,
-#administracio h2 {
+#administracio h2,
+#canviImatge h2 {
     background-color: #ff8170;
     border: solid 2px black;
     padding: 15px;
@@ -248,7 +250,8 @@
 }
 
 #construccio,
-#admin {
+#admin,
+#cambioFoto {
     background-color: #e7f3a1;
     border: solid 2px black;
     margin: 10px auto 10px auto;
@@ -580,4 +583,43 @@ table th {
     color: #006633;
     font-weight: bold;
     border-radius: 5px;
+}
+
+.usuari-benvinguda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foto-perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#formCambioFoto {
+    margin: 30px;
+}
+
+.mensajeCambioFoto {
+    display: block;
+    padding: 20px;
+    margin: 5px auto;
+    background-color: rgb(226, 226, 226);
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+.pujarEliminar {
+    display: block;
+    padding: 15px;
+    margin: 10px auto;
+    background-color: rgb(208, 229, 255);
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid blue;
+    border-radius: 15px;
 }

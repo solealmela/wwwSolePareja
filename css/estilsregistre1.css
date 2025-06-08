@@ -595,3 +595,25 @@ table td {
     border:2px solid purple;
     background-color: rgb(245, 177, 245);
 }
+
+.resum_compra {
+    padding: 10px;
+    margin: 10px 30px 10px 30px;
+    background-color: #ff9af7;
+    border: 3px solid purple;
+    color: purple;
+}
+
+.fitxa-carret {
+    margin: 30px auto;
+}
+
+.missatge-compra {
+    background-color: #ffe6fe;
+    border: 1px solid #cc009c;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #66005c;
+    font-weight: bold;
+    border-radius: 5px;
+}
